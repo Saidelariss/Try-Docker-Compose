@@ -3,5 +3,10 @@ services:
     build: .
     ports:
       - "8000:5000"
+    volumes: 
+    #  bind mount 
+      - .:/code
+    environment:
+      FLASK_DEBUG: "true"
   redis:
     image: "redis:alpine"
